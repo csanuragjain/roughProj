@@ -30,8 +30,8 @@ try:
             socket.setdefaulttimeout(5)
             result = sock.connect_ex((remoteServerIP, port))
             if result == 0:
-                banner = sock.recv(1024)
                 print ("Port {}: 	 Open".format(port))
+                banner = sock.recv(1024)
                 print (banner)
             sock.close()
         except Exception:
