@@ -24,15 +24,18 @@ t1 = datetime.now()
 # We also put in some error handling for catching errors
 
 try:
-    for port in range(1,65535):  
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(5)
-        result = sock.connect_ex((remoteServerIP, port))
-        if result == 0:
-            banner = sock.recv(1024)
-            print ("Port {}: 	 Open".format(port))
-            print (banner)
-        sock.close()
+    for port in range(1,65535): 
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socket.setdefaulttimeout(5)
+            result = sock.connect_ex((remoteServerIP, port))
+            if result == 0:
+                banner = sock.recv(1024)
+                print ("Port {}: 	 Open".format(port))
+                print (banner)
+            sock.close()
+        except Exception, e:
+            print("ex")
 
 except KeyboardInterrupt:
     print ("You pressed Ctrl+C")
