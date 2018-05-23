@@ -26,6 +26,7 @@ t1 = datetime.now()
 try:
     for port in range(1,65535):  
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        socket.setdefaulttimeout(5)
         result = sock.connect_ex((remoteServerIP, port))
         if result == 0:
             banner = sock.recv(1024)
