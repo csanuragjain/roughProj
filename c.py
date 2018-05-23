@@ -28,7 +28,9 @@ try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         result = sock.connect_ex((remoteServerIP, port))
         if result == 0:
+            banner = sock.recv(1024)
             print ("Port {}: 	 Open".format(port))
+            print (banner)
         sock.close()
 
 except KeyboardInterrupt:
