@@ -36,7 +36,7 @@ except KeyboardInterrupt:
     sys.exit()
 
 except socket.gaierror:
-    print ("Hostname could not be resolved. Exiting")
+    print ("Hostname could not be resolved. Exiting.")
     sys.exit()
 
 except socket.error:
