@@ -34,7 +34,7 @@ try:
                 print ("Port {}: 	 Open".format(port))
                 print (banner)
             sock.close()
-        except Exception e:
+        except Exception:
             print("ex")
 
 except KeyboardInterrupt:
