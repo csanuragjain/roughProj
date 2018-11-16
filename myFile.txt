@@ -1,0 +1,2 @@
+<script>alert("I should have been text file")</script>
+<a href="https:\\google.com">hello</a>
